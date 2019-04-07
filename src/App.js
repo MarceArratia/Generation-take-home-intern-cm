@@ -3,49 +3,70 @@ import './App.css';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 
-
-
 const style = {
-  width: '100%',
-  height: '80%'
+  width: '80%',
+  height: '65%'
 }
 class App extends Component {
-  componentDidMount(){
-    let url='./store_directory.json';
-    fetch(url, {
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
-
-    })
-    .then(res => res.json())
-    .then(text => console.log(text))
+  constructor(props){
+    super(props);
+    this.state={
+      data:[]
+    }
+  
   }
+  componentDidMount(){
+  
+fetch('./store_directory.json')
+.then(response => response.json()
+.then(location =>{
+let dataLocation =[];
+for(let i=0; i<location.length;i++){
+ 
+  let item=location[i];
+  item.key= i;
+  item.address=location[i].Address;
 
+dataLocation.push(item);
+}
+  this.setState(prevState => {
+    return { data: [...prevState.data, ...dataLocation]}
+  });
+}))
+}
+  
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-        <h1 className="App-title">Ciudad de México</h1>
+        <h1 className="App-title">StoresFilter</h1>
         </header>
-         
+  
       <Map google={this.props.google}
-       zoom={13}
+       zoom={12.5}
        style={style}
           initialCenter={{
             lat:19.419444,lng:-99.145556
           }}
           onClick={this.onMapClicked}>
  
- <Marker position={{lat:19.434322,lng:-99.099506}} onClick={this.onMarkerClick}
-         name={'Los burritos de Mike'}
-       />
-<Marker position={{lat:19.431994,lng:-99.131153}} onClick={this.onMarkerClick}
-         name={'Palacio Nacional'} />
-<Marker position={{lat:40.640771,lng:-74.016133}} onClick={this.onMarkerClick}
-         name={'Museo'} />     
+
+{this.state.data.map(item=>{
+ 
+  return(
+   
+    <Marker position={{lat:item.Coordinates.lat,lng:item.Coordinates.lng}} onClick={this.onMarkerClick}
+    name={item.address}
+  />
+
+  )
+}
+
+)}
+
+
+
 
  <InfoWindow onClose={this.onInfoWindowClose}>
   
