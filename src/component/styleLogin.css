@@ -1,5 +1,5 @@
 body{
-    
+    background: url(../img/stores.jpeg);
     -webkit-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
@@ -9,7 +9,7 @@ body{
 
 .container-form{
     position: relative;
-    background: rgba(0,0,0,.7);
+    background: rgba(0, 0, 0, 0.43);
     width: 100%;
     max-width: 500px;
     margin: 48px auto;
