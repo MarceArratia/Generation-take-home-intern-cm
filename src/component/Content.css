@@ -1,0 +1,9 @@
+.mapa{
+    height: 70% !important;
+    width: 95% !important;
+    position: absolute;
+    margin-top: -125%
+}
+.lista{
+    margin-top: 135%;
+}
