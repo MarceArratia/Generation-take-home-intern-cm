@@ -1,8 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Historias de usuarios
+
+Historias de usuarios de estudiantes:
+Como estudiante, quiero ver un mapa de la Ciudad de México.
+Como estudiante, quiero ver un mapa que tenga todas las tiendas representadas como marcadores / pines en el mapa. (¿Qué es un marcador de google maps?).
+Como estudiante, quiero poder hacer clic en el marcador de una tienda y agregarlo a la lista de "Mis tiendas favoritas".
+Como estudiante, quiero poder hacer clic en una tienda en "Mis tiendas favoritas" y eliminarla de la lista.
 
 ### `npm start`
 

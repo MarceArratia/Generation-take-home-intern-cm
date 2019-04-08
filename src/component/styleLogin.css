@@ -1,0 +1,124 @@
+body{
+    
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+
+.container-form{
+    position: relative;
+    background: rgba(0,0,0,.7);
+    width: 100%;
+    max-width: 500px;
+    margin: 48px auto;
+    color: #fff;
+    border-radius: 5px;
+
+   /* padding: 40px;*/
+}
+
+.container-form .toggle{
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    line-height: 30px;
+    font-size: 12px;
+    line-height: 25px;
+    text-align: center;
+    border-top: 2px solid #ff851b;
+    border-bottom: 2px solid #ff851b;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+.container-form .toggle span {
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+.container-form .toggle:hover {
+    border-top: 2px solid #0075d9;
+    border-bottom: 2px solid #0075d9;
+}
+
+.container-form h2{
+    margin: 0 0 28px 0;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.container-form input[type="text"],
+.container-form input[type="password"],
+.container-form input[type="email"]{
+    outline:none;
+    background: rgba(0,0,0,.5);
+    display:block;
+    width: 100%;
+    padding: 10px 15px;
+    color:#fff;
+    border: none;
+    border-radius: 2px;
+    border-bottom: 4px solid #ff851b;
+    font-family:  Roboto;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0 0 20px 0;
+    transition: all .5s ease;
+}
+
+.container-form input[type="text"]:focus,
+.container-form input[type="password"]:focus,
+.container-form input[type="email"]:focus{
+    border-bottom: 4px solid #0075d9;
+}
+
+.container-form input[type="button"]{
+    background: #ff851b;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 10px 0;
+    font-weight: normal;
+    font-family: Roboto;
+    letter-spacing: 1px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.container-form input[type="button"]:hover{
+    background: rgba(0,117,217,0.7);
+}
+
+.container-form .reset-password{
+    background: rgba(0,117,217,0.7);
+    width: 100%;
+    padding: 15px 0;
+    text-align:center;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.container-form .reset-password a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 23px;
+}
+
+.container-form .divForm {
+    padding: 60px;
+    display: none;
+    margin-top: 50%;
+
+}
+
+.container-form .divForm:nth-child(2) {
+    display: block;
+}
+
+
