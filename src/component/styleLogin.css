@@ -30,8 +30,8 @@ body{
     font-size: 12px;
     line-height: 25px;
     text-align: center;
-    border-top: 2px solid #ff851b;
-    border-bottom: 2px solid #ff851b;
+    border-top: 2px solid #2c9470;
+    border-bottom: 2px solid #2c9470;
     transition: all .5s ease;
     cursor: pointer;
 }
@@ -63,7 +63,7 @@ body{
     color:#fff;
     border: none;
     border-radius: 2px;
-    border-bottom: 4px solid #ff851b;
+    border-bottom: 4px solid #2c9470;
     font-family:  Roboto;
     font-size: 24px;
     font-weight: normal;
@@ -78,7 +78,7 @@ body{
 }
 
 .container-form input[type="button"]{
-    background: #ff851b;
+    background: #2c9470;
     color: #fff;
     border: none;
     width: 100%;
@@ -113,7 +113,7 @@ body{
 .container-form .divForm {
     padding: 60px;
     display: none;
-    margin-top: 50%;
+
 
 }
 
