@@ -11,7 +11,7 @@ class Header extends Component {
     render() {
       return (
         <div className="Header">
-        <h1>StoresFilter</h1>
+        <h1>Ciudad de México</h1>
   
         </div>
       );

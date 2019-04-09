@@ -1,15 +1,20 @@
 body{
-    background: url(../img/stores.jpeg);
+    background: #2c9470;;
     -webkit-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
 
 }
 
+.divLogin{
+    background:url(../img/stores.jpeg);
+    width: auto;
+    height: 480px;
+}
 
 .container-form{
     position: relative;
-    background: rgba(0, 0, 0, 0.43);
+    background: rgba(0, 0, 0, 0.59);
     width: 100%;
     max-width: 500px;
     margin: 48px auto;
@@ -111,7 +116,7 @@ body{
 }
 
 .container-form .divForm {
-    padding: 60px;
+    padding: 90px;
     display: none;
 
 

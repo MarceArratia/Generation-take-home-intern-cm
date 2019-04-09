@@ -1,5 +1,6 @@
 .Footer{
-    margin-top: 10%;
+    margin-top: 10% !important;
     text-align: center;
     font-size: 8px;
+    color: white;
 }

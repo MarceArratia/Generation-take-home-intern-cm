@@ -20,7 +20,7 @@ class Content extends Component{
       }
       onMarkerClick(stores) {
         favorites.push(stores.name+","+stores.title);
-        console.log(favorites)
+        //le.log(favorites)
         this.setState(prevState => {
           return { favorites: [...prevState.name, ...favorites]}
         });
@@ -61,7 +61,9 @@ class Content extends Component{
                         )}
                     </Map>
                   </div>
+                  
                   <div className="lista">
+                  
                     <MiFavorytes name={this.state.favorites}/>
                   </div>
               </div>

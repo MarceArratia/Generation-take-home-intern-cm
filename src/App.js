@@ -4,7 +4,6 @@ import './App.css';
 
 import Header from './component/Header.js';
 import Content from './component/Content.js';
-import Footer from './component/Footer.js';
 import firebase from 'firebase';
 import {DB_CONFIG} from './Initializers/Firebase';
 import Login from './component/Login'
@@ -77,9 +76,8 @@ class App extends Component {
        </div>
       </div>
       <div className="App" style={{display: 'none'}} id="home">
-      <Header title="StoresFilter"/>
+      <Header title="Tiendas Favoritas"/>
      <Content/>
-      <Footer copyright ="&copy; StoresFilter 2019"/>
       </div>
       </div>
     )

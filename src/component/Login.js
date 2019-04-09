@@ -4,7 +4,7 @@ class Login extends Component {
  
     render(){
         return(
-          <div>
+          <div className="divLogin">
            
             <div className="divForm" id="sesionInit" style={{display: 'block'}}>
                 <h2>Iniciar Sesión</h2>
