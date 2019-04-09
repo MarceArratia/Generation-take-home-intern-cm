@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import './MiFavorytes.css'
-import { stat } from 'fs';
+import './MiFavorytes.css';
+import firebase from '../Initializers/Firebase';
 class MyFavorytes extends Component {
     constructor(props){
       super();
+      this.ref = firebase.database().ref('MiFavorytes');
       this.state={
         name:[]
        }
+       
  
     }
         render() {

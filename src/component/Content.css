@@ -1,13 +1,10 @@
-@media screen and (min-width: 300px) and (max-width: 700px){
 
 .mapa{
-    height: 70% !important;
-    width: 95% !important;
+    height: 98% !important;
+    width: 98% !important;
     position: absolute;
     margin-top: -125%;
 }
 .lista{
-    margin-top: 135%;
-}
-
+    margin-top: 130%;
 }

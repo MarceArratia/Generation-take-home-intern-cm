@@ -5,15 +5,12 @@ import './App.css';
 import Header from './component/Header.js';
 import Content from './component/Content.js';
 import firebase from 'firebase';
-import {DB_CONFIG} from './Initializers/Firebase';
 import Login from './component/Login'
 
 
 class App extends Component {
   constructor(){
     super()
-      firebase.initializeApp(DB_CONFIG);
-   
   }
   loginFunction(){
     
