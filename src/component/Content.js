@@ -60,10 +60,11 @@ class Content extends Component{
                                 )}
                         )}
                     </Map>
+                   
                   </div>
                   
                   <div className="lista">
-                  
+                  <p> Mis Tiendas Favoritas</p>
                     <MiFavorytes name={this.state.favorites}/>
                   </div>
               </div>
