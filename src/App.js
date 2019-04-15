@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
 import './App.css';
-
-
 import Header from './component/Header.js';
 import Content from './component/Content.js';
 import firebase from 'firebase';
+import {DB_CONFIG} from './Initializers/Firebase';
 import Login from './component/Login'
 
-
 class App extends Component {
-  constructor(){
-    super()
-  }
-  loginFunction(){
+  constructor(props){
+    super(props);
+    firebase.initializeApp(DB_CONFIG);
     
+  }
+
+  loginFunction(){
     let email=document.getElementById("usersLogin").value;
     let password=document.getElementById("passwordLogin").value;
     firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
       document.getElementById("home").style.display="block";
       document.getElementById("login").style.display="none";
+
+      
     })
     .catch(function(error) {
-        // Handle Errors here.
+        console.log(error)
         alert("Usuario o Contraseña no Existe");
         // ...
       });
@@ -53,8 +55,6 @@ class App extends Component {
     document.getElementById("buttonLogin").style.display="block";
     document.getElementById("registerUser").style.display="none";
   }
-  
-
   render(){
     return(
       <div>

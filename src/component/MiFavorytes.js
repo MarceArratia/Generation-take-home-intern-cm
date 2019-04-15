@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
 import './MiFavorytes.css';
-import firebase from '../Initializers/Firebase';
+
+
+
 class MyFavorytes extends Component {
     constructor(props){
       super();
-      this.ref = firebase.database().ref('MiFavorytes');
-      this.state={
-        name:[]
-       }
-       
- 
     }
         render() {
           if(typeof this.props.name !== "undefined"){
             let favorites=this.props.name;
             return(
-              
               <ul>
               {favorites.map(item=>{
                 return(

@@ -1,29 +1,44 @@
 import React, { Component } from 'react';
 import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 import MiFavorytes from './MiFavorytes';
-
+import firebase from 'firebase';
 import './Content.css'
 
-let favorites=[];
-/*const style = {
-    width: '60%',
-    height: '45%'
-  }
-*/
+
+
 class Content extends Component{
     constructor(props){
         super(props);
-        this.state={
-         data:[],
-         name:[]
-        }
+          this.state={
+            data:[],
+            name:[]
+           }   
       }
       onMarkerClick(stores) {
-        favorites.push(stores.name+","+stores.title);
-        //le.log(favorites)
-        this.setState(prevState => {
-          return { favorites: [...prevState.name, ...favorites]}
-        });
+      let favorites=[];
+      let existe=false;
+      let refLike= firebase.database().ref();
+      refLike.on('value',(snapshot)=>{
+        snapshot.forEach(function(item){
+          favorites.push(item.val().name+","+item.val().address);
+          if(item.val().correo === document.getElementById('usersLogin').value && item.val().address=== stores.address && item.val().name=== stores.name){
+            existe=true;
+          }
+        })
+      });
+      if(existe){
+        alert("La tienda ya esta agregada");
+      }
+      else{
+        let refName=firebase.database().ref();
+        refName.push({name:stores.name,correo:document.getElementById('usersLogin').value,address:stores.address})
+      }
+      this.setState(prevState => {
+        return { favorites: [...prevState.name, ...favorites]}
+      });
+      }
+      showTienda(){
+          document.getElementById("lista").style.display="block";
       }
       componentDidMount(){
       fetch('./store_directory.json')
@@ -33,7 +48,7 @@ class Content extends Component{
       for(let i=0; i<location.length;i++){
         let item=location[i];
         item.key= i;
-        item.address=location[i].Address;
+        item.address=location[i].Address; 
         item.name=location[i].Name;
       dataLocation.push(item);
       }
@@ -41,7 +56,9 @@ class Content extends Component{
           return { data: [...prevState.data, ...dataLocation]}
         });
       }))
+
       }
+  
       render(){
           return(
               <div>
@@ -56,16 +73,16 @@ class Content extends Component{
                          {this.state.data.map(item=>{
                             return(
                                 <Marker position={{lat:item.Coordinates.lat,lng:item.Coordinates.lng}} onClick={this.onMarkerClick.bind(this)}
-                                name={item.name} title={item.address} />
+                                name={item.name} address={item.address} />
                                 )}
                         )}
                     </Map>
                    
                   </div>
-                  
-                  <div className="lista">
+                  <button id="tiendas" onClick={this.showTienda.bind()}>Ver Tiendas</button>
+                  <div id="lista" className="lista" style={{display: 'none'}}>
                   <p> Mis Tiendas Favoritas</p>
-                    <MiFavorytes name={this.state.favorites}/>
+                  <MiFavorytes name={this.state.favorites}/>
                   </div>
               </div>
     ) 
@@ -73,7 +90,7 @@ class Content extends Component{
 };
 
 
-
+// 
 
 
 export default GoogleApiWrapper({
