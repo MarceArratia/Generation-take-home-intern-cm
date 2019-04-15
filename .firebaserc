@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "storesfavorytes"
+    "default": "storesfavorytes",
+    "Stores": "storesfavorytes",
+    "storesfavorytes": "storesfavorytes"
   }
 }

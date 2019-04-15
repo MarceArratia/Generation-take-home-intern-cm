@@ -3,19 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-  
     "firebase": "^5.9.4",
+    "deploy": "^1.0.3",
     "google-maps-react": "^2.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-firebase": "^2.2.8",
+    "prop-types": "^15.7.2",
+    "react-deploy": "0.0.15",
     "react-redux": "^7.0.2",
     "react-scripts": "2.1.8",
     "redux": "^4.0.1"
   },
- 
-  "main": "login.html"
-,
+  "main": "login.html",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -34,6 +34,6 @@
   "author": "Marcela Arratia",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MarceArratia/SCL007-BurgerQueen/issues"
+    "url": ""
   }
 }

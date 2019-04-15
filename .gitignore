@@ -46,6 +46,11 @@ build/Release
 # Dependency directories
 node_modules/
 
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
 # Optional npm cache directory
 .npm
 
@@ -58,8 +63,7 @@ node_modules/
 # Output of 'npm pack'
 *.tgz
 
-# Yarn Integrity file
-.yarn-integrity
+
 
 # dotenv environment variables file
 .env
