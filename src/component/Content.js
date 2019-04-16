@@ -94,6 +94,6 @@ class Content extends Component{
 
 
 export default GoogleApiWrapper({
-    apiKey: ("AIzaSyCVH8e45o3d-5qmykzdhGKd1-3xYua5D2A")
+    apiKey: ("AIzaSyC0ki-b7om6VfJY1AN0ZDeRWqSEgySn5vw")
   })(Content)
 

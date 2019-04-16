@@ -15,7 +15,7 @@
     "react-scripts": "2.1.8",
     "redux": "^4.0.1"
   },
-  "main": "login.html",
+  "main": "index.html",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
