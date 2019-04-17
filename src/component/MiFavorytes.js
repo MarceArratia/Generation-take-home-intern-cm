@@ -1,42 +1,56 @@
 import React, { Component } from 'react';
 import './MiFavorytes.css';
-
+import firebase from 'firebase';
 
 
 class MyFavorytes extends Component {
+
     constructor(props){
-      super();
+      super(props);
+      this.state={
+        data:[]
+       }  
+       this.fillData();
+    }
+    fillData() {
+      let datafirebase=[];
+      let refData=firebase.database().ref();
+      refData.on('value',(snapshot)=>{
+        snapshot.forEach((item)=>{
+          datafirebase.push({id:item.key,
+                              name:item.val().name,
+                              address:item.val().address,
+                            correo:item.val().correo});
+        })
+      });
+      this.setState({ data:datafirebase});   
+    }
+    componentWillReceiveProps(next_props) {
+      console.log("llego un cambio");
+      this.fillData();
+
+    }
+    componentDidMount(){
+      this.fillData();
+    }
+    deleteFavorite(event){
+      console.log(event.target.id);
+     firebase.database().ref(event.target.id).remove();
+     this.fillData();
     }
         render() {
-          if(typeof this.props.name !== "undefined"){
-            let favorites=this.props.name;
             return(
               <ul>
-              {favorites.map(item=>{
-                return(
-                <li>{item}</li>
-                )
-              })}
+                {this.state.data.map(item =>{
+                      return(
+                        <li>{item.address},{item.name} <button value="X" id={item.id} onClick={this.deleteFavorite.bind(this)} /></li>
+                      )
+                    })}
               </ul>
             )
-          }else{
-            return(<p>Sin Información</p>)
-          }
-          
-        }
       }
+    }
 
 export default MyFavorytes;
 
-/*if {(this.state.name !=null) 
-  return(
-    <h3 className="divh">Mis tiendas favoritas</h3>
-    {this.props.name.map(item=>{
-     return(
-      <p className="stores" position={{lat:item.Coordinates.lat,lng:item.Coordinates.lng}} 
-     name={item.name} title={item.address}> X</p>
-                  )}
-          )}
-  )}
-      */
         

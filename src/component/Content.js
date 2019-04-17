@@ -11,16 +11,14 @@ class Content extends Component{
         super(props);
           this.state={
             data:[],
-            name:[]
+            cambio:false
            }   
       }
       onMarkerClick(stores) {
-      let favorites=[];
-      let existe=false;
+     let existe=false;
       let refLike= firebase.database().ref();
       refLike.on('value',(snapshot)=>{
         snapshot.forEach(function(item){
-          favorites.push(item.val().name+","+item.val().address);
           if(item.val().correo === document.getElementById('usersLogin').value && item.val().address=== stores.address && item.val().name=== stores.name){
             existe=true;
           }
@@ -30,15 +28,10 @@ class Content extends Component{
         alert("La tienda ya esta agregada");
       }
       else{
-        let refName=firebase.database().ref();
-        refName.push({name:stores.name,correo:document.getElementById('usersLogin').value,address:stores.address})
+        refLike.push({name:stores.name,correo:document.getElementById('usersLogin').value,address:stores.address})
       }
-      this.setState(prevState => {
-        return { favorites: [...prevState.name, ...favorites]}
-      });
-      }
-      showTienda(){
-          document.getElementById("lista").style.display="block";
+      this.setState({cambio:true});
+
       }
       componentDidMount(){
       fetch('./store_directory.json')
@@ -46,43 +39,39 @@ class Content extends Component{
       .then(location =>{
       let dataLocation =[];
       for(let i=0; i<location.length;i++){
-        let item=location[i];
-        item.key= i;
-        item.address=location[i].Address; 
-        item.name=location[i].Name;
-      dataLocation.push(item);
+       // console.log(location[i].Coordinates.lat);
+      dataLocation.push({
+        id:i,address:location[i].Address,name:location[i].Name,lat:location[i].Coordinates.lat,lng:location[i].Coordinates.lng
+      });
       }
         this.setState(prevState => {
           return { data: [...prevState.data, ...dataLocation]}
         });
       }))
-
       }
-  
       render(){
           return(
               <div>
                   <div className="mapa">
                     <Map google={this.props.google}
                         zoom={13}
-                         //styles={style}
                         initialCenter={{
                         lat:19.419444,lng:-99.145556
                         }}
                         onClick={this.onMapClicked}>
                          {this.state.data.map(item=>{
+                           //console.log(item);
+                           //position={{lat:item.Coordinates.lat,lng:item.Coordinates.lng}}
                             return(
-                                <Marker position={{lat:item.Coordinates.lat,lng:item.Coordinates.lng}} onClick={this.onMarkerClick.bind(this)}
+                                <Marker position={{lat:item.lat,lng:item.lng}} id={item.id} onClick={this.onMarkerClick.bind(this)}
                                 name={item.name} address={item.address} />
                                 )}
                         )}
                     </Map>
-                   
                   </div>
-                  <button id="tiendas" onClick={this.showTienda.bind()}>Ver Tiendas</button>
-                  <div id="lista" className="lista" style={{display: 'none'}}>
+                  <div id="lista" className="lista">
                   <p> Mis Tiendas Favoritas</p>
-                  <MiFavorytes name={this.state.favorites}/>
+                  <MiFavorytes name={this.state.cambio}/>
                   </div>
               </div>
     ) 
