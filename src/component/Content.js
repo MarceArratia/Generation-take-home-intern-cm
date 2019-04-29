@@ -59,7 +59,7 @@ class Content extends Component{
               <div>
                   <div className="mapa">
                     <Map google={this.props.google}
-                        zoom={13}
+                        zoom={10}
                         style={style}
                         initialCenter={{
                         lat:19.419444,lng:-99.145556
