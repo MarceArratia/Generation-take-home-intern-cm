@@ -43,7 +43,8 @@ class MyFavorytes extends Component {
               <ul>
                 {this.state.data.map(item =>{
                       return(
-                        <li>{item.address},{item.name} <button value="X" id={item.id} onClick={this.deleteFavorite.bind(this)} /></li>
+                        <li>{item.address},{item.name} <img class="deleteImg" src={require("../img/delete.png")} id={item.id} onClick={this.deleteFavorite.bind(this)} /></li>
+                       
                       )
                     })}
               </ul>

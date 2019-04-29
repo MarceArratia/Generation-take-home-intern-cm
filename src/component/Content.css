@@ -1,11 +1,10 @@
 
 .mapa{
-    height: 100vh;
-    width: 90%;
+    height: 110vh !important;
+    
    
 }
 .lista{
-
-    color: #fff;
+    color: black;
     text-align: center;
 }

@@ -75,6 +75,7 @@ class App extends Component {
       <div className="App" style={{display: 'none'}} id="home">
       <Header title="Tiendas Favoritas"/>
      <Content/>
+     
       </div>
       </div>
     )

@@ -5,7 +5,11 @@ import firebase from 'firebase';
 import './Content.css'
 
 
-
+const style = {
+  width: '95%',
+  height: '50%',
+  
+}
 class Content extends Component{
     constructor(props){
         super(props);
@@ -49,12 +53,14 @@ class Content extends Component{
         });
       }))
       }
+      
       render(){
           return(
               <div>
                   <div className="mapa">
                     <Map google={this.props.google}
                         zoom={13}
+                        style={style}
                         initialCenter={{
                         lat:19.419444,lng:-99.145556
                         }}
