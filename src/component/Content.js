@@ -6,8 +6,8 @@ import './Content.css'
 
 
 const style = {
-  width: '95%',
-  height: '50%',
+  width: '90%',
+  height: '100%',
   
 }
 class Content extends Component{
@@ -56,9 +56,10 @@ class Content extends Component{
       
       render(){
           return(
-              <div>
-                  <div className="mapa">
-                    <Map google={this.props.google}
+            <div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 stores">
+    <Map google={this.props.google}
                         zoom={10}
                         style={style}
                         initialCenter={{
@@ -74,12 +75,14 @@ class Content extends Component{
                                 )}
                         )}
                     </Map>
-                  </div>
-                  <div id="lista" className="lista">
-                  <p> Mis Tiendas Favoritas</p>
+    </div>
+    <div class="col">
+    <p className="pTittle"> Mis Tiendas Favoritas</p>
                   <MiFavorytes name={this.state.cambio}/>
-                  </div>
-              </div>
+    </div>
+  </div>
+</div>
+           
     ) 
     }
 };
