@@ -5,11 +5,12 @@ StoresFavorytes es una Apps creada para estudiantes de Ciudad de México para fa
 
 ## Historias de usuarios
 
-Historias de usuarios de estudiantes:
-
 Como estudiante, quiero ver un mapa de la Ciudad de México.
+
 Como estudiante, quiero ver un mapa que tenga todas las tiendas representadas como marcadores/pines en el mapa.
+
 Como estudiante, quiero poder hacer clic en el marcador de una tienda y agregarlo a la lista de "Mis tiendas favoritas".
+
 Como estudiante, quiero poder hacer clic en una tienda en "Mis tiendas favoritas" y eliminarla de la lista.
 
 ### Uso Aplicación
