@@ -1,3 +1,6 @@
+# StoresFavorytes
+
+StoresFavorytes es una Apps creada para estudiantes de Ciudad de México para facilitar la búsqueda de Tiendas en un mapa de Google, las cuales se pueden guardar como tiendas favoritas con su nombre y dirección, así como también eliminar si el usuario así lo desea.
 
 
 ## Historias de usuarios
@@ -5,22 +8,22 @@
 Historias de usuarios de estudiantes:
 
 Como estudiante, quiero ver un mapa de la Ciudad de México.
-Como estudiante, quiero ver un mapa que tenga todas las tiendas representadas como marcadores / pines en el mapa. (¿Qué es un marcador de google maps?).
+Como estudiante, quiero ver un mapa que tenga todas las tiendas representadas como marcadores/pines en el mapa.
 Como estudiante, quiero poder hacer clic en el marcador de una tienda y agregarlo a la lista de "Mis tiendas favoritas".
 Como estudiante, quiero poder hacer clic en una tienda en "Mis tiendas favoritas" y eliminarla de la lista.
 
-### `npm start`
+### Uso Aplicación
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Para tener acceso a la aplicación debe entrar al siguiente link:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+[StoresFavorytes](https://storesfavorytes.firebaseapp.com/) 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Interfaz final
+
+El diseño final se escogió en base a lo que el usuario necesitaba con un acceso fácil y minimalista.
+
+[Interfaz final](final.png)
 
 ### `npm run build`
 
